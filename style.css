@@ -1,0 +1,62 @@
+body, html {
+  height: 99%;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.bg-text {
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+  color: #222831;
+  font-family: 'Reggae One', cursive;
+}
+
+
+
+.bg-image1 {
+  background-image: url("https://puu.sh/HhSC2/f4fd5c244c.gif");
+}
+
+.bg-image2 {
+  background-image: url("https://puu.sh/HhSCp/12efb708e3.gif");
+}
+
+.bg-image3 {
+  background-image: url("https://puu.sh/HhSCp/12efb708e3.gif");
+}
+
+.bg-image1, .bg-image2, .bg-image3 {
+
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  display: inline-table;
+
+  height: 100%;
+  width: 33%;
+  opacity: 0.10;
+  cursor: crosshair;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+}
+
+.bg-image1:hover, .bg-image2:hover, .bg-image3:hover, .bg-image4:hover {
+  opacity: 1.0;
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+}
