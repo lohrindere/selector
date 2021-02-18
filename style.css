@@ -9,23 +9,6 @@ body, html {
 }
 
 
-.bg-text {
-  color: white;
-  font-weight: bold;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  width: 80%;
-  padding: 20px;
-  text-align: center;
-  color: #222831;
-  font-family: 'Reggae One', cursive;
-}
-
-
-
 .bg-image1 {
   background-image: url("https://puu.sh/HhSC2/f4fd5c244c.gif");
 }
@@ -52,6 +35,7 @@ body, html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin: 0;
 
 
 }
