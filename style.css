@@ -10,37 +10,45 @@ body, html {
 
 
 .bg-image1 {
-  background-image: url("https://data.whicdn.com/images/350682349/original.gif");
+  background-image: url("https://puu.sh/I8VOO/db2e300a5f.gif");
 }
 
 .bg-image2 {
-  background-image: url("https://data.whicdn.com/images/349794710/original.gif");
+  background-image: url("https://puu.sh/I8VPt/855f47ef3f.gif");
 }
 
 .bg-image3 {
-  background-image: url("https://data.whicdn.com/images/345694842/original.gif");
+  background-image: url("https://puu.sh/I8VPD/e2eac08dc7.gif");
 }
 
-.bg-image1, .bg-image2, .bg-image3 {
+.bg-image4 {
+  background-image: url("https://puu.sh/I8VPM/86236cd3db.gif");
+}
+
+.bg-image5 {
+  background-image: url("https://puu.sh/I8VPT/c46b21f46b.gif");
+}
+
+
+.bg-image1, .bg-image2, .bg-image3, .bg-image4, .bg-image5 {
 
   filter: blur(5px);
   -webkit-filter: blur(5px);
-  display: inline-table;
+  display: table;
 
   height: 100%;
-  width: 33%;
+  width: 100%;
   opacity: 0.10;
   cursor: crosshair;
 
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
   margin: 0;
 
 
 }
 
-.bg-image1:hover, .bg-image2:hover, .bg-image3:hover, .bg-image4:hover {
+.bg-image1:hover, .bg-image2:hover, .bg-image3:hover, .bg-image4:hover, .bg-image5:hover {
   opacity: 1.0;
   filter: blur(0px);
   -webkit-filter: blur(0px);
