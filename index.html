@@ -1,24 +1,133 @@
 <!DOCTYPE html>
-<html lang="ru" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="https://puu.sh/HhSBP/5fdb38e99c.png">
-    <link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
-    <title>3ТО DРYГО3!</title>
-  </head>
-  <body>
-  <a href = "" target="_blank"><div class="bg-image1"></div></a>
-  <a href = ""><div class="bg-image2"></div></a>
-  <a href = ""><div class="bg-image3"></div></a>
-  <a href = ""><div class="bg-image4"></div></a>
-  <a href = ""><div class="bg-image5"></div></a>
-  <audio src="https://puu.sh/I8VSp/c8f833e7df.mp3" autoplay loop id = egornesmotru>
-  </audio>
-  <script>
-    var downaudio = document.getElementById("egornesmotru");
-    downaudio.volume = 0.2;
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ОЙОЙОЙОЙОЙОЙО</title>
+
+    <style>
+        body {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .floating-text {
+            position: absolute;
+            animation: floatAnimation 5s linear infinite;
+        }
+
+        @keyframes floatAnimation {
+            0% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(50vw, 50vh);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<style>
+        body {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ffcc00, #ff6699); /* Замените цвета на ваши */
+            animation: gradientAnimation 10s infinite alternate;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: white;
+            font-size: 3em; /* Размер шрифта */
+            text-align: center;
+            text-transform: uppercase; /* Все буквы в верхнем регистре */
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .background-gif {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+    <img class="background-gif" src="https://64.media.tumblr.com/tumblr_m8vme1FpfM1qazdquo1_500.gif" alt="">
+	
+	
+    <div class="floating-text">
+        <h1>ПОПАЛСЯ ПИДОРАС</h1>
+    </div>
+
+    <h1>ОЙОЙОЙОЙООЙОЙ</h1>
+
+    <p id="browser-info">Браузер: <span id="browser"></span></p>
+    <p id="ip-info">IP-адрес: <span id="ip"></span></p>
+    <p id="location-info">Геолокация: <span id="location"></span></p>
+    <p id="resolution-info">Разрешение экрана: <span id="resolution"></span></p>
+    <p id="platform-info">Платформа: <span id="platform"></span></p>
+
+    <script>
+        // Получение информации о браузере
+        document.getElementById('browser').textContent = navigator.userAgent;
+
+        // Получение IP-адреса
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('ip').textContent = data.ip;
+            })
+            .catch(error => console.error('Ошибка при получении IP-адреса:', error));
+
+        // Получение геолокации
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(
+                position => {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    document.getElementById('location').textContent = `Широта: ${latitude}, Долгота: ${longitude}`;
+                },
+                error => {
+                    if (error.code === error.PERMISSION_DENIED) {
+                        document.getElementById('location').textContent = 'ДУМАЕШЬ НЕ НАЙДЕМ?)))))))))))))))))';
+                    } else {
+                        console.error('Ошибка при получении геолокации:', error);
+                    }
+                }
+            );
+        } else {
+            document.getElementById('location').textContent = 'Геолокация недоступна';
+        }
+
+        // Получение разрешения экрана
+        document.getElementById('resolution').textContent = `${window.screen.width}x${window.screen.height}`;
+
+        // Получение платформы
+        document.getElementById('platform').textContent = navigator.platform;
     </script>
 
-  </body>
+</body>
 </html>
