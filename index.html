@@ -1,133 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ОЙОЙОЙОЙОЙОЙО</title>
-
-    <style>
-        body {
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        .floating-text {
-            position: absolute;
-            animation: floatAnimation 5s linear infinite;
-        }
-
-        @keyframes floatAnimation {
-            0% {
-                transform: translate(0, 0);
-            }
-            50% {
-                transform: translate(50vw, 50vh);
-            }
-            100% {
-                transform: translate(0, 0);
-            }
-        }
-    </style>
+    <title>Тест</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<style>
-        body {
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to right, #ffcc00, #ff6699); /* Замените цвета на ваши */
-            animation: gradientAnimation 10s infinite alternate;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        h1 {
-            color: white;
-            font-size: 3em; /* Размер шрифта */
-            text-align: center;
-            text-transform: uppercase; /* Все буквы в верхнем регистре */
-        }
-
-        @keyframes gradientAnimation {
-            0% {
-                background-position: 0% 50%;
-            }
-            100% {
-                background-position: 100% 50%;
-            }
-        }
-
-        .background-gif {
-            position: absolute;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-        }
-    </style>
-</head>
-<body>
-
-    <img class="background-gif" src="https://64.media.tumblr.com/tumblr_m8vme1FpfM1qazdquo1_500.gif" alt="">
-	
-	
-    <div class="floating-text">
-        <h1>ПОПАЛСЯ ПИДОРАС</h1>
+    <video autoplay muted loop id="background-video">
+        <source src="https://cdn.discordapp.com/attachments/1180853540055429133/1279512245117911223/kuromi-skeleton-and-flying-hearts-hello-kitty.3840x2160_1.mp4?ex=66d4b623&is=66d364a3&hm=f40f0dab4f821b8cb2012ba98f51e28e4c31fa51a50014cda67d21f0cabe0fdb&" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+    </video>
+    <div class="container">
+        <h1>Какой ты котик?</h1>
+        <form id="quiz-form">
+            <div class="question" id="question-container">
+            </div>
+            <button type="button" id="next-button">Далее</button>
+        </form>
     </div>
 
-    <h1>ОЙОЙОЙОЙООЙОЙ</h1>
-
-    <p id="browser-info">Браузер: <span id="browser"></span></p>
-    <p id="ip-info">IP-адрес: <span id="ip"></span></p>
-    <p id="location-info">Геолокация: <span id="location"></span></p>
-    <p id="resolution-info">Разрешение экрана: <span id="resolution"></span></p>
-    <p id="platform-info">Платформа: <span id="platform"></span></p>
-
-    <script>
-        // Получение информации о браузере
-        document.getElementById('browser').textContent = navigator.userAgent;
-
-        // Получение IP-адреса
-        fetch('https://api.ipify.org?format=json')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('ip').textContent = data.ip;
-            })
-            .catch(error => console.error('Ошибка при получении IP-адреса:', error));
-
-        // Получение геолокации
-        if ("geolocation" in navigator) {
-            navigator.geolocation.getCurrentPosition(
-                position => {
-                    const latitude = position.coords.latitude;
-                    const longitude = position.coords.longitude;
-                    document.getElementById('location').textContent = `Широта: ${latitude}, Долгота: ${longitude}`;
-                },
-                error => {
-                    if (error.code === error.PERMISSION_DENIED) {
-                        document.getElementById('location').textContent = 'ДУМАЕШЬ НЕ НАЙДЕМ?)))))))))))))))))';
-                    } else {
-                        console.error('Ошибка при получении геолокации:', error);
-                    }
-                }
-            );
-        } else {
-            document.getElementById('location').textContent = 'Геолокация недоступна';
-        }
-
-        // Получение разрешения экрана
-        document.getElementById('resolution').textContent = `${window.screen.width}x${window.screen.height}`;
-
-        // Получение платформы
-        document.getElementById('platform').textContent = navigator.platform;
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
